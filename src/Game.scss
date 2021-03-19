@@ -1,0 +1,36 @@
+.game {
+	$card-size: 160px;
+	display: grid;
+	grid-gap: 20px;
+	grid-template-columns: repeat(auto-fit, $card-size);
+	justify-content: center;
+
+	.card {
+		border: 3px solid #666666;
+		box-shadow: rgba(0, 0, 0, 0.25) 0 2px 6px;
+		border-radius: 10px;
+		font-size: 48px;
+		font-weight: bold;
+		height: $card-size;
+		width: $card-size / 3 * 2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&.up {
+			background: #dedada;
+			border-color: #686868;
+		}
+		&.down {
+			background: #958c68;
+		}
+		&.selectable {
+			cursor: pointer;
+		}
+		&.solved {
+			border-color: #4cd74e;
+		}
+		&.invalid {
+			border-color: #d74c4c;
+		}
+	}
+}

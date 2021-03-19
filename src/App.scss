@@ -1,0 +1,16 @@
+.modal {
+	width: 400px;
+
+	& > *:not(:last-child) {
+		margin: 0 0 20px;
+	}
+
+	p {
+		text-align: justify;
+	}
+
+	button {
+		width: 100%;
+		cursor: pointer;
+	}
+}
