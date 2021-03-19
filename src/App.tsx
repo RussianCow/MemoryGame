@@ -14,7 +14,7 @@ export default function App() {
 	const selectCounter = useSelector(selectors.selectCounter)
 	const startGame = () => dispatch(actions.startGame())
 	return (
-		<React.Fragment>
+		<div className={styles.app}>
 			<Game />
 			{startState === 'not-started' && (
 				<Modal className={styles.modal}>
@@ -37,6 +37,6 @@ export default function App() {
 					<button onClick={startGame}>New Game</button>
 				</Modal>
 			)}
-		</React.Fragment>
+		</div>
 	)
 }
