@@ -39,6 +39,7 @@ export default function reducer(state = initialState, action: Action): State {
 				startState: 'started',
 				cardValues: shuffleArray(state.cardValues),
 			}
+
 		case SELECT_CARD:
 			const newState = {
 				...state,
@@ -70,7 +71,7 @@ export default function reducer(state = initialState, action: Action): State {
 				const previouslySelectedValue = state.cardValues[previouslySelectedIndex]
 				newState.faceUpCardIndexes = [...newState.faceUpCardIndexes, index]
 				if (value === previouslySelectedValue) {
-					newState.selectedCardIndexes = []
+					newState.selectedCardIndexes = [null, null]
 				}
 				else {
 					newState.selectedCardIndexes = [state.selectedCardIndexes[0], index]
@@ -80,7 +81,6 @@ export default function reducer(state = initialState, action: Action): State {
 				}
 				return newState
 			}
-
 
 			throw new Error(
 				`\`selectedCardIndexes\` is invalid (${state.selectedCardIndexes}). This should never happen.`
